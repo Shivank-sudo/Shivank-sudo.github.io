@@ -13,3 +13,13 @@ Polynomial Regression (degree 3) was used to model the curved trend in stock pri
 The ARIMA model does not seem to be the best choice here. It is outperformed by simpler models like Naive Forecast and Linear Regression in this case.
 
 This is common for stock prices because they exhibit nonlinear, volatile patterns that ARIMA may not be suited to capture.
+
+Random Forest with rmse 36.23 performs better than ARIMA but still worse than Naive Forecast and Linear Regression. Random Forest improved over ARIMA by capturing more complex relationships (nonlinear) between stock prices and past values.
+
+Why Random Forest Was Not Much Better: Stock price volatility: Random Forest might struggle to capture extreme market fluctuations, as it doesn't account for external factors like market news, earnings reports, etc.
+
+Lack of time-based features: While Random Forest uses lagged data, it still lacks true sequential memory (like LSTM or ARIMA with seasonal adjustments).
+
+Even for Optimized Random Forest RMSE: 35.73 — A small improvement from the previous 36.23, but still behind the Linear Regression (31.42) and Naive Forecast (3.40).
+
+This suggests that Random Forest, despite its ability to capture non-linear relationships, still struggles to match the performance of simpler models for stock prediction in this case.
